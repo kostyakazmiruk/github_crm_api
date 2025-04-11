@@ -15,9 +15,25 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
   password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  projects  Project[]
+}
+
+model Project {
+  id                 Int      @id @default(autoincrement())
+  owner              String
+  name               String
+  url                String
+  stars              Int
+  forks              Int
+  issues             Int
+  createdAtTimestamp Int
+  addedAt            DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  userId             Int
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

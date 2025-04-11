@@ -17,7 +17,6 @@ import {
 } from '@nestjs/swagger';
 import { LocalAuthGuard } from './guards/jwt-auth-guard';
 import { JwtAuthGuard } from './guards/local-auth-guard';
-import { Prisma } from '@prisma/client';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginDto } from './dto/login-user.dto';
 
@@ -26,7 +25,7 @@ import { LoginDto } from './dto/login-user.dto';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post('register')
+  @Post('signup')
   @ApiOperation({ summary: 'Register a new user' })
   @ApiBody({ type: CreateUserDto })
   @ApiResponse({

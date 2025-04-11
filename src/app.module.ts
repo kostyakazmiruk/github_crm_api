@@ -8,9 +8,18 @@ import { AuthModule } from './auth/auth.module';
 import { GithubService } from './github/github.service';
 import { GithubModule } from './github/github.module';
 import { ConfigModule } from '@nestjs/config';
+import { ProjectModule } from './project/project.module';
 
 @Module({
-  imports: [PrismaModule, UserModule, AuthModule, GithubModule, ConfigModule],
+  imports: [
+    PrismaModule,
+    UserModule,
+    AuthModule,
+    GithubModule,
+    ProjectModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+  ],
+
   controllers: [AppController],
   providers: [AppService, PrismaService, GithubService],
 })

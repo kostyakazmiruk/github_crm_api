@@ -44,15 +44,15 @@ export class ProjectController {
     return this.projectService.findAllByUser(req.user.id);
   }
 
-  @Get(':id')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
-  @ApiOperation({ summary: 'Get a project by id' })
-  @ApiResponse({ status: 200, description: 'Project details' })
-  @ApiResponse({ status: 404, description: 'Project not found' })
-  findOne(@Param('id', ParseIntPipe) id: number, @Request() req) {
-    return this.projectService.findOne(id, req.user.id);
-  }
+  // @Get(':id')
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
+  // @ApiOperation({ summary: 'Get a project by id' })
+  // @ApiResponse({ status: 200, description: 'Project details' })
+  // @ApiResponse({ status: 404, description: 'Project not found' })
+  // findOne(@Param('id', ParseIntPipe) id: number, @Request() req) {
+  //   return this.projectService.findOne(id, req.user.id);
+  // }
 
   @Put(':id')
   @UseGuards(JwtAuthGuard)

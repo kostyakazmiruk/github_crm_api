@@ -6,7 +6,7 @@ services:
       # Only will build development stage from our dockerfile
       target: development
     environment:
-      ALLOWED_ORIGINS: 'http://frontend:3000'
+      ALLOWED_ORIGINS: 'http://localhost:3000'
     volumes:
       - .:/usr/src/app
     env_file:

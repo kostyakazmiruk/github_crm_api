@@ -49,7 +49,6 @@ ENV NODE_ENV production
 # Passing in --only=production ensures that only the production dependencies are installed.
 # This ensures that the node_modules directory is as optimized as possible.
 RUN npm install --only=production && npm cache clean --force
-COPY socket-client.html /usr/src/app/
 
 USER node
 
@@ -57,7 +56,7 @@ USER node
 # PRODUCTION
 ###################
 
-FROM node:18-alpine As production
+FROM node:23-alpine As production
 
 # Copy the bundled code from the build stage to the production image
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules

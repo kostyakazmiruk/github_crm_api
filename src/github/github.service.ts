@@ -1,4 +1,3 @@
-// src/github/github.service.ts
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { exec } from 'child_process';

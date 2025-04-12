@@ -1,4 +1,3 @@
-// src/github/github.controller.ts
 import { Controller, Get, Param } from '@nestjs/common';
 import { GithubService } from './github.service';
 

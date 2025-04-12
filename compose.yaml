@@ -1,5 +1,6 @@
 services:
   api:
+    platform: "linux/amd64"
     build:
       dockerfile: Dockerfile
       context: .

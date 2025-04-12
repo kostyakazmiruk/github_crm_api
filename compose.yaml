@@ -1,0 +1,42 @@
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      # Only will build development stage from our dockerfile
+      target: development
+    environment:
+      ALLOWED_ORIGINS: 'http://frontend:3000'
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    # Run a command against the development stage of the image
+    command: npm run start:dev
+    ports:
+      - "${SERVICE_PORT}:${SERVICE_PORT}"
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: ${DATABASE_DBNAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:5432
+    env_file:
+      - .env
+  frontend:
+    image: your-dockerhub-username/github-crm-frontend:latest
+    environment:
+      NEXT_PUBLIC_BACKEND_API: "http://api:8000/api" # or update as needed
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+networks:
+  default:
+    name: github_crm

@@ -30,7 +30,7 @@ services:
     env_file:
       - .env
   frontend:
-    image: your-dockerhub-username/github-crm-frontend:latest
+    image: kostyakazmirukk/github-crm-frontend:latest
     environment:
       NEXT_PUBLIC_BACKEND_API: "http://api:8000/api" # or update as needed
     ports:

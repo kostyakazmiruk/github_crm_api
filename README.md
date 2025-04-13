@@ -18,9 +18,13 @@ https://www.loom.com/share/5b68f9820d9340eabeea4a7656d51e46?sid=9f9f6d27-0ba7-4e
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## FrontEnd repo
+
 https://github.com/kostyakazmiruk/github_crm_frontend
 
 ## Project setup
+
+You would need to add your github_token to .env
+Github is too secure, so my token is revoked :)
 
 ```bash
 $ npm install

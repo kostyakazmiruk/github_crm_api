@@ -1,5 +1,5 @@
 services:
-Only fronten#  api:
+# api:
 #    platform: "linux/amd64"
 #    build:
 #      dockerfile: Dockerfile

@@ -1,8 +1,5 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
 
-https://www.loom.com/embed/5b68f9820d9340eabeea4a7656d51e46?sid=ada69427-8380-4415-a492-bfa485c2f619
+[https://www.loom.com/embed/5b68f9820d9340eabeea4a7656d51e46?sid=ada69427-8380-4415-a492-bfa485c2f619](https://www.loom.com/embed/5b68f9820d9340eabeea4a7656d51e46?sid=ada69427-8380-4415-a492-bfa485c2f619)
 
 <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">

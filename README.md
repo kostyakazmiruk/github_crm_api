@@ -17,9 +17,8 @@ https://www.loom.com/share/5b68f9820d9340eabeea4a7656d51e46?sid=9f9f6d27-0ba7-4e
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## FrontEnd repo
+https://github.com/kostyakazmiruk/github_crm_frontend
 
 ## Project setup
 

@@ -1,23 +1,37 @@
 services:
-  api:
-    platform: "linux/amd64"
-    build:
-      dockerfile: Dockerfile
-      context: .
-      # Only will build development stage from our dockerfile
-      target: development
-    environment:
-      ALLOWED_ORIGINS: 'http://localhost:3000'
-    volumes:
-      - .:/usr/src/app
-    env_file:
-      - .env
-    depends_on:
-      - postgres
-    # Run a command against the development stage of the image
-    command: npm run start:dev
-    ports:
-      - "${SERVICE_PORT}:${SERVICE_PORT}"
+Only fronten#  api:
+#    platform: "linux/amd64"
+#    build:
+#      dockerfile: Dockerfile
+#      context: .
+#      # Only will build development stage from our dockerfile
+#      target: development
+#    environment:
+#      ALLOWED_ORIGINS: 'http://localhost:3000'
+#    volumes:
+#      - .:/usr/src/app
+#    env_file:
+#      - .env
+#    depends_on:
+#      - postgres
+#    # Run a command against the development stage of the image
+#    command: npm run start:prod
+#    ports:
+#      - ${SERVICE_PORT}:${SERVICE_PORT}
+
+#  migration:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#      target: development
+#    environment:
+#      DATABASE_URL: "postgresql://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@postgres:5432/${DATABASE_DBNAME}?schema=public"
+#    env_file:
+#      - .env
+#    depends_on:
+#      - postgres
+#    command: npx prisma migrate deploy
+#    restart: "no"
 
   postgres:
     image: postgres:latest
@@ -30,14 +44,13 @@ services:
       - ${DATABASE_PORT}:5432
     env_file:
       - .env
+
   frontend:
     image: kostyakazmirukk/github-crm-frontend:latest
     environment:
       NEXT_PUBLIC_BACKEND_API: "http://api:8000/api" # or update as needed
     ports:
       - "3000:3000"
-    depends_on:
-      - api
 networks:
   default:
     name: github_crm
